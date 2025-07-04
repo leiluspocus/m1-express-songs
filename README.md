@@ -1,7 +1,5 @@
 # API Express avec Prisma et Supabase
 
-Test !
-
 Cette API REST démontre l'utilisation d'un ORM (Prisma) avec Express et Supabase dans une architecture MVC.
 
 ## 🏗️ Architecture
@@ -64,20 +62,4 @@ Table `songs` :
 | POST | `/api/songs` | Créer une nouvelle chanson |
 | PUT | `/api/songs/:id` | Mettre à jour une chanson |
 | DELETE | `/api/songs/:id` | Supprimer une chanson |
-
-## 💡 Concepts ORM démontrés
-
-- **Modélisation** : Définition des modèles avec Prisma Schema
-- **CRUD** : Opérations Create, Read, Update, Delete
-- **Requêtes** : findMany, findUnique, create, update, delete
-- **Validation** : Middleware de validation des données
-- **Relations** : Prêt pour l'extension avec des relations
-- **Migrations** : Gestion des changements de schéma
-
-## 🎓 Points pédagogiques
-
-1. **Architecture MVC** : Séparation claire des responsabilités
-2. **ORM vs SQL** : Abstraction des requêtes de base de données
-3. **Type Safety** : Typage automatique avec Prisma
-4. **Bonnes pratiques** : Gestion d'erreurs, validation, middleware
-5. **Sécurité** : Helmet, CORS, validation des entrées
+ 
