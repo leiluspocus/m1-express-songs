@@ -1,0 +1,27 @@
+{
+  "name": "express-prisma-api",
+  "version": "1.0.0",
+  "description": "API Express avec Prisma et Supabase - Cours ORM",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "db:generate": "npx prisma generate",
+    "db:push": "npx prisma db push",
+    "db:migrate": "npx prisma migrate dev",
+    "db:seed": "node scripts/seed.js",
+    "db:studio": "npx prisma studio",
+    "setup": "npm run db:generate && npm run db:push && npm run db:seed"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^6.9.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.18.2",
+    "helmet": "^7.2.0",
+    "morgan": "^1.10.0",
+    "prisma": "^5.22.0",
+    "supabase": "^2.0.0"
+  }
+}
