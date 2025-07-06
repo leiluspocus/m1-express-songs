@@ -15,6 +15,14 @@ model Song {
   created_at DateTime @default(now())
   title      String
   artist     String
+  tags      Tag[]
   
   @@map("songs")
+}
+
+
+model Tag {
+  id    Int    @id @default(autoincrement())
+  name  String
+  songs Song[]
 }
