@@ -15,6 +15,6 @@ model Song {
   created_at DateTime @default(now())
   title      String
   artist     String
-
+  
   @@map("songs")
 }
