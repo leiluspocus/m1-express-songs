@@ -1,14 +1,9 @@
-const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
+// @todo - Utiliser ORM Prisma ici ...
 
 // GET /api/songs - Récupérer toutes les chansons
 const getAllSongs = async (req, res) => {
   try {
-    const songs = await prisma.song.findMany({
-      orderBy: {
-        created_at: 'desc'
-      }
-    });
+    const songs = [] // @todo - Utiliser ORM Prisma ici ...
     
     res.json({
       success: true,
@@ -28,11 +23,7 @@ const getAllSongs = async (req, res) => {
 const getSongById = async (req, res) => {
   try {
     const { id } = req.params;
-    const song = await prisma.song.findUnique({
-      where: {
-        id: parseInt(id)
-      }
-    });
+    const song = [] // @todo - Utiliser ORM Prisma ici ...
 
     if (!song) {
       return res.status(404).json({
@@ -67,12 +58,7 @@ const createSong = async (req, res) => {
       });
     }
 
-    const song = await prisma.song.create({
-      data: {
-        title,
-        artist
-      }
-    });
+    const song = [] // @todo - Utiliser ORM Prisma ici ...
 
     res.status(201).json({
       success: true,
@@ -95,9 +81,7 @@ const updateSong = async (req, res) => {
     const { title, artist } = req.body;
 
     // Vérifier si la chanson existe
-    const existingSong = await prisma.song.findUnique({
-      where: { id: parseInt(id) }
-    });
+    const existingSong = [] // @todo - Utiliser ORM Prisma ici ...
 
     if (!existingSong) {
       return res.status(404).json({
@@ -106,15 +90,7 @@ const updateSong = async (req, res) => {
       });
     }
 
-    const updatedSong = await prisma.song.update({
-      where: {
-        id: parseInt(id)
-      },
-      data: {
-        ...(title && { title }),
-        ...(artist && { artist })
-      }
-    });
+    const updatedSong = [] // @todo - Utiliser ORM Prisma ici pour mettre à jour la chanson ...
 
     res.json({
       success: true,
@@ -136,9 +112,7 @@ const deleteSong = async (req, res) => {
     const { id } = req.params;
 
     // Vérifier si la chanson existe
-    const existingSong = await prisma.song.findUnique({
-      where: { id: parseInt(id) }
-    });
+    const existingSong = [] // @todo - Utiliser ORM Prisma ici pour chercher si la chanson existe ...
 
     if (!existingSong) {
       return res.status(404).json({
@@ -147,11 +121,7 @@ const deleteSong = async (req, res) => {
       });
     }
 
-    await prisma.song.delete({
-      where: {
-        id: parseInt(id)
-      }
-    });
+     // @todo - Utiliser ORM Prisma ici pour supprimer une ligne ...
 
     res.json({
       success: true,
